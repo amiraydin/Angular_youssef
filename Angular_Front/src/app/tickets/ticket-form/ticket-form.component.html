@@ -1,0 +1,39 @@
+<div class="container mt-2">
+  <h3>Create a new ticket</h3>
+  <form class="border rounded ps-3" [formGroup]="ticketForm" (ngSubmit)="addTicket()">
+    <label class="mt-2" for="title">
+      Title <br>
+      <input class="form-control" required type="text" id="title" [formControlName]="'title'">
+    </label>
+    <br>
+    <label class="mt-2" for="description">
+      Description <br>
+      <input class="form-control" type="text" id="description" [formControlName]="'description'">
+    </label>
+    <br>
+    <label for="stud">
+      Student <br>
+      <select class="form-select" required id="stud" [formControlName]="'studentID'">
+        <option value="" disabled selected>Choose the Student</option>
+        <option *ngFor="let studi of Student_List" [value]="studi.id">
+          {{studi.id}} - {{studi.lastName}} {{studi.firstName}}
+        </option>
+      </select>
+    </label>
+    <br>
+    <label class="mt-2" for="major">
+      Major <br>
+      <select class="form-select" required id="major" [formControlName]="'major'">
+        <option value="" disabled selected>Choose your Major</option>
+        <option *ngFor="let currentMajor of MajorList" [value]="currentMajor">
+          {{currentMajor}}
+        </option>
+      </select>
+    </label>
+    <br>
+    <button type="submit" class="manuBtn" [disabled]="!ticketForm.valid">Create</button>
+  </form>
+</div>
+
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{ticketForm.getRawValue() | json}} -->

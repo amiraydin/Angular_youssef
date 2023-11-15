@@ -1,0 +1,13 @@
+<div class="ticket-list">
+  <button class="manuBtn" (click)="displayTicketArchived = !displayTicketArchived">
+    {{displayTicketArchived ? 'Hide' : 'Show'}} the Tickets
+  </button>
+  <div class="mt-2" *ngFor="let ticket of Ticket_List">
+    <!--Inputs & Output allow communication between parent & child components.-->
+    <!--More information: https://angular.io/guide/component-interaction-->
+    <span *ngIf="!ticket.archived || displayTicketArchived">
+      <app-ticket [ticket]="ticket" (ticketHasBeenSelected)="ticketHasBeenSelected($event)"
+        (ticketHasBeenArchived)="archiveTicket($event)"></app-ticket>
+    </span>
+  </div>
+</div>

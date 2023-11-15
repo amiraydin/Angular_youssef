@@ -1,0 +1,13 @@
+:root {
+  --background-color: #F0F0F0;
+  --linearGradient: linear-gradient(to right, #24c6dc, #514a9d);
+  --white: white;
+  --borderRadius: 0.5em;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+}
+
+/*# sourceMappingURL=styles.css.map */

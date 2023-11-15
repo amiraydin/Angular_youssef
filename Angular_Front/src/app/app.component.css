@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+}
+
+app-ticket-form {
+  margin-left: 2em;
+}
+
+app-ticket-list {
+  flex: 1;
+}

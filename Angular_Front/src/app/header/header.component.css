@@ -1,0 +1,13 @@
+/* @import '../../styles/variables'; */
+
+/**
+  Use :host to apply some style to your entire component
+ */
+:host {
+  color: white;
+}
+
+.header {
+  background: linear-gradient(to right, #24c6dc, #514a9d);
+  padding: 1em;
+}
