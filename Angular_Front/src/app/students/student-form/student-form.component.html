@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <div class=" p-4">
+        <h1 class="fs-4">Add a Student</h1>
+    </div>
+    <div class="container col-6 border rounded bg-light mt-4 p-4 m-auto">
+        <form [formGroup]="profileForm" (ngSubmit)="addAnUser()">
+            <div class="row mb-3">
+                <div class="col">
+                    <label class="form-label" for="first">First name</label>
+                    <input type="text" required id="first" autocomplete="off" class="form-control"
+                        formControlName="FirstName" />
+                </div>
+                <div class="col">
+                    <label class="form-label" for="last">Last name</label>
+                    <input type="text" required id="last" autocomplete="off" class="form-control"
+                        formControlName="LastName" />
+                </div>
+            </div>
+            <div class="d-flex justify-content-around">
+                <button type="submit" [disabled]="!profileForm.valid" class="col-md-4 mt-3 manuBtn m-auto">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

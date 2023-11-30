@@ -1,0 +1,29 @@
+@import '../../../styles/card.css';
+
+.stud {
+    width: 100%;
+    text-align: center;
+    /* // background: red; */
+}
+
+/* .stud:hover {
+    cursor: pointer;
+} */
+
+.delbtn {
+    background-color: white;
+}
+
+.delbtn:hover {
+    background-color: rgb(241, 37, 10);
+    color: white;
+}
+
+.detailbtn {
+    background-color: white;
+}
+
+.detailbtn:hover {
+    background-color: rgb(139, 226, 85);
+    color: white;
+}

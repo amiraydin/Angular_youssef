@@ -1,37 +1,44 @@
 <div class="container mt-2">
   <h3>Create a new ticket</h3>
-  <form class="border rounded ps-3" [formGroup]="ticketForm" (ngSubmit)="addTicket()">
-    <label class="mt-2" for="title">
-      Title <br>
+  <form class="border col-md-4 m-auto rounded p-3" [formGroup]="ticketForm" (ngSubmit)="addTicket()">
+    <div>
+      <label class="mt-2" for="title"> Title </label>
       <input class="form-control" required type="text" id="title" [formControlName]="'title'">
-    </label>
-    <br>
-    <label class="mt-2" for="description">
-      Description <br>
+    </div>
+    <div>
+      <label class="mt-2" for="description"> Description </label>
       <input class="form-control" type="text" id="description" [formControlName]="'description'">
-    </label>
-    <br>
-    <label for="stud">
-      Student <br>
-      <select class="form-select" required id="stud" [formControlName]="'studentID'">
+    </div>
+    <div>
+      <label for="stud"> Student </label>
+      <!-- <input type="search" class="form-control" autocomplete="off" id="stud" [formControlName]="'studentSearch'"
+        placeholder="Search for a student" (input)="filterStudent($event)" />
+      <div *ngIf="studentFilter && studentFilter.length > 0">
+        <ul class="list-unstyled bg-light border rounded">
+          <li class="p-2" *ngFor="let studi of studentFilter.slice(0, 5)" (click)="selectStudent(studi)">
+            {{studi.LastName}} - {{studi.FirstName}}
+          </li>
+        </ul>
+      </div> -->
+      <select class="form-select" required id="stud" [formControlName]="'studentId'">
         <option value="" disabled selected>Choose the Student</option>
         <option *ngFor="let studi of Student_List" [value]="studi.id">
-          {{studi.id}} - {{studi.lastName}} {{studi.firstName}}
+          {{studi.LastName}} - {{studi.FirstName}}
         </option>
       </select>
-    </label>
-    <br>
-    <label class="mt-2" for="major">
-      Major <br>
+    </div>
+    <div>
+      <label class="mt-2" for="major"> Major </label>
       <select class="form-select" required id="major" [formControlName]="'major'">
         <option value="" disabled selected>Choose your Major</option>
         <option *ngFor="let currentMajor of MajorList" [value]="currentMajor">
           {{currentMajor}}
         </option>
       </select>
-    </label>
-    <br>
-    <button type="submit" class="manuBtn" [disabled]="!ticketForm.valid">Create</button>
+    </div>
+    <div>
+      <button type="submit" class="manuBtn col-sm-4" [disabled]="!ticketForm.valid">Create</button>
+    </div>
   </form>
 </div>
 

@@ -1,0 +1,12 @@
+<div>
+    <div class="student-list container">
+        <div class="mt-2" *ngFor="let student of student_list">
+            <!--Inputs & Output allow communication between parent & child components.-->
+            <!--More information: https://angular.io/guide/component-interaction-->
+            <span *ngIf="student">
+                <app-student [student]="student" (studentHasBeenDeleted)="studentDelete($event)"></app-student>
+                <!-- (studentHasBeenSelected)="studentSelected($event)" -->
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+.manuBtn {
+    margin: 12px;
+    background-color: aliceblue;
+    border: 0.1px solid;
+    border-radius: 15px;
+    padding: 2px 20px 2px 20px;
+}
+
+.manuBtn:hover {
+    background-color: rgb(48, 210, 216);
+    color: white;
+}

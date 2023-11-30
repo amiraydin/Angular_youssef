@@ -14,6 +14,7 @@ router.put('/:ticketId', (req, res) => res.status(200).json(attachStudent(Ticket
 
 router.post('/', (req, res) => {
   try {
+    // console.log("donnes sont la ", req.body);
     const ticket = Ticket.create(req.body);
     res.status(201).json(attachStudent(ticket));
   } catch (err) {

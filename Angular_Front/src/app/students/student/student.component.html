@@ -1,0 +1,17 @@
+<div class="card stud">
+    <!-- (click)="studentSelected()" -->
+    <div class="">
+        <img *ngIf="student" [src]="!!student.avatar ? student.avatar+'?id='+student.id : 'https://i.pravatar.cc/100'"
+            class="img-fluid border rounded-circle" width="100" height="100" alt="image student alt">
+    </div>
+    <div class="d-flex align-items-center justify-content-center p-1 gap-2">
+        <span *ngIf="student">
+            <i class="far fa-user"></i> {{student.FirstName}} {{student.LastName}} &nbsp;&nbsp;
+        </span>
+    </div>
+    <!-- delete -->
+    <div>
+        <button class="delbtn border rounded" (click)="studentDelete()">Delete</button>
+        <button class="detailbtn border rounded" routerLink="/students/{{student.id}}">Details</button>
+    </div>
+</div>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js",
+    "start": "nodemon app/index.js",
     "watch": "ng build --watch --configuration development",
     "server": "npx json-server --watch ./app/db.json",
     "dev": "./node_modules/.bin/nodemon app/index.js",
@@ -17,9 +17,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/delmotte/back-end-starter-3a-pns-2019/issues"
-  },
   "dependencies": {
     "body-parser": "1.18.3",
     "cors": "2.8.5",

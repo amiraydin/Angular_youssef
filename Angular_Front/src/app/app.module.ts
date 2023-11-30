@@ -7,6 +7,12 @@ import { TicketComponent, TicketFormComponent, TicketListComponent } from './tic
 import { TicketService } from '../services/ticket/ticket.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+import { StudentFormComponent } from './students/student-form/student-form.component';
+import { StudentService } from 'src/services/student/student.service';
+import { StudentComponent } from './students/student/student.component';
+import { StudentDetailComponent } from './students/student-detail/student-detail.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +20,19 @@ import { HeaderComponent } from './header/header.component';
     TicketComponent,
     TicketFormComponent,
     TicketListComponent,
-    HeaderComponent
+    HeaderComponent,
+    StudentFormComponent,
+    StudentComponent,
+    StudentDetailComponent,
+    StudentListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule, // Import all dependencies
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [TicketService], // All the services need to be provided
+  providers: [TicketService, StudentService], // All the services need to be provided
   bootstrap: [AppComponent]
 })
 export class AppModule {

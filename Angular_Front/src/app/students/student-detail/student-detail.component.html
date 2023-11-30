@@ -1,0 +1,25 @@
+<div>
+    <div class="container col-md-6 mt-2 border rounded bg-light">
+        <div *ngIf="student" class="p-3">
+            <form action="" method="post" [formGroup]="detailForm" (ngSubmit)="updateUser()">
+                <div class="">
+                    <img *ngIf="student"
+                        [src]="!!student.avatar ? student.avatar+'?id='+student.id : 'https://i.pravatar.cc/100'"
+                        class="img-fluid border rounded-circle" width="100" height="100" alt="image student" />
+                </div>
+                <div class="d-flex flex-wrap justify-content-around p-2">
+                    <div class="d-grid">
+                        <input type="text" [formControlName]="'FirstName'" value="{{student.FirstName}}" />
+                        <input type="text" [formControlName]="'LastName'" value="{{student.LastName}}" />
+                    </div>
+                    <textarea inputmode="latin" type="textarea" required [formControlName]="'notes'"
+                        value="{{student.notes}}"></textarea>
+                    <div>
+                        <button class="detailbtn border rounded" type="submit">Add
+                            Notes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

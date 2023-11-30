@@ -1,5 +1,7 @@
 export interface Student {
-    id: number,
-    firstName: String,
-    lastName: String
+    id: string;
+    FirstName: String;
+    LastName: String;
+    notes: String;
+    avatar: String | null;
 }
